@@ -17,24 +17,16 @@ def startCalculate():
         br_addr = net_addr.broadcast_address
         
         
-        nettext = "Network Address: " + str(net_addr).split('/')[0]
-        brdtext = "Broadcast Address : " + str(br_addr)
-        CIDRtext = 'CIDR Notation : ' + pref_len.split('/')[1]
-        masktext = "Subnet Mask : " + mask.split('/')[1]
-        wildcardtext = "Wildcard Mask : " + str(wildcard)
-        showfirsttext = 'First IP : ' + str(list(net_addr.hosts())[0])
-        showlasttext = 'Last IP : ' + str(list(net_addr.hosts())[-1])
-
-        showip.configure(text=ip_addr)
-        showNetAddr.configure(text = nettext)
-        showBrdAddr.configure(text = brdtext)
-        showCIDRAddr.configure(text = CIDRtext)
-        showMask.configure(text = masktext)
-        showWildcard.configure(text= wildcardtext)
-        showFirstIP.configure(text = showfirsttext)
-        showLastIP.configure(text = showlasttext)
+        showip.configure(text= 'Information for : ' + str(ip_addr))
+        showNetAddr.configure(text = "Network Address: " + str(net_addr).split('/')[0])
+        showBrdAddr.configure(text = "Broadcast Address : " + str(br_addr))
+        showCIDRAddr.configure(text = 'CIDR Notation : ' + pref_len.split('/')[1])
+        showMask.configure(text = "Subnet Mask : " + mask.split('/')[1])
+        showWildcard.configure(text= "Wildcard Mask : " + str(wildcard))
+        showFirstIP.configure(text = 'First IP : ' + str(list(net_addr.hosts())[0]))
+        showLastIP.configure(text = 'Last IP : ' + str(list(net_addr.hosts())[-1]))
         
-
+        
     except:
         print("no bueno")
     
